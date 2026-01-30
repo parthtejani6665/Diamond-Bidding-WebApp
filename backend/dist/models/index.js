@@ -1,0 +1,20 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.AutoBid = exports.Result = exports.Diamond = exports.BidHistory = exports.UserBid = exports.DiamondBid = exports.User = exports.sequelize = void 0;
+const database_1 = require("../config/database");
+Object.defineProperty(exports, "sequelize", { enumerable: true, get: function () { return database_1.sequelize; } });
+const User_1 = require("./User");
+Object.defineProperty(exports, "User", { enumerable: true, get: function () { return User_1.User; } });
+const DiamondBid_1 = require("./DiamondBid");
+Object.defineProperty(exports, "DiamondBid", { enumerable: true, get: function () { return DiamondBid_1.DiamondBid; } });
+const UserBid_1 = require("./UserBid");
+Object.defineProperty(exports, "UserBid", { enumerable: true, get: function () { return UserBid_1.UserBid; } });
+const BidHistory_1 = require("./BidHistory");
+Object.defineProperty(exports, "BidHistory", { enumerable: true, get: function () { return BidHistory_1.BidHistory; } });
+const Diamond_1 = require("./Diamond");
+Object.defineProperty(exports, "Diamond", { enumerable: true, get: function () { return Diamond_1.Diamond; } });
+const Result_1 = require("./Result");
+Object.defineProperty(exports, "Result", { enumerable: true, get: function () { return Result_1.Result; } });
+const AutoBid_1 = require("./AutoBid");
+Object.defineProperty(exports, "AutoBid", { enumerable: true, get: function () { return AutoBid_1.AutoBid; } });
+//# sourceMappingURL=index.js.map

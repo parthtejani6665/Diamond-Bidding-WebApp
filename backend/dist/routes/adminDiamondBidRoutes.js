@@ -1,0 +1,20 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const auth_1 = require("../middleware/auth");
+const requireRole_1 = require("../middleware/requireRole");
+const upload_1 = require("../middleware/upload");
+const diamondBidController_1 = require("../controllers/diamondBidController");
+const resultController_1 = require("../controllers/resultController");
+const router = (0, express_1.Router)();
+router.use(auth_1.authMiddleware, (0, requireRole_1.requireRole)("admin"));
+router.get("/", diamondBidController_1.listDiamondBids);
+router.post("/", upload_1.diamondImageUpload.single("diamondImage"), diamondBidController_1.createDiamondBid);
+router.get("/:id", diamondBidController_1.getDiamondBidById);
+router.put("/:id", diamondBidController_1.updateDiamondBid);
+router.delete("/:id", diamondBidController_1.deleteDiamondBid);
+router.get("/:id/all-bids", resultController_1.getAllBidsForDiamond);
+router.get("/:id/bid-history", resultController_1.getBidHistoryForDiamond);
+router.post("/:id/declare-result", resultController_1.declareResult);
+exports.default = router;
+//# sourceMappingURL=adminDiamondBidRoutes.js.map
